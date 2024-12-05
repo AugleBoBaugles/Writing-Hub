@@ -1,6 +1,21 @@
 const express = require('express');
+require('dotenv').config();
+const mariadb = require('mariadb');
+
+const pool = mariadb.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+
+})
+
+
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT_NUM;
+
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));

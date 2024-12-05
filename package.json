@@ -11,6 +11,7 @@
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
+    "mariadb": "^3.4.0",
     "nodemon": "^3.1.7"
   },
   "description": ""
