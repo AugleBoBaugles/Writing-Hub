@@ -1,0 +1,73 @@
+/* 
+    DEFAULT COLOR PALLET (Midnight)
+    -------------
+    #E0D8FF - Pale Periwinkle
+    #A393DF - African Violet
+    #9882AC - African Violet (darker)
+    #73648A - Pomp and Power
+    #453750 - Enlgish Violet
+    #0C0910 - Night
+
+*/
+html {
+    background-color: #0C0910;
+    color: #E0D8FF;
+}
+
+header {
+    background-color: #453750;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.section {
+    background-color: #73648A;
+    padding: 10px;
+}
+
+.request {
+    background-color: #E0D8FF;
+    color: #0C0910;
+
+    padding: 10px;
+    margin: 10px;
+}
+
+input, textarea {
+    display: block;
+    background-color: #E0D8FF;
+    width: 75%;
+    margin: 10px auto;
+    
+}
+
+textarea {
+    height: 3rem;
+}
+
+input {
+    height: 2rem;
+}
+
+a {
+    background-color: #9882AC;
+    color: #0C0910;
+    border-radius: 5px;
+    padding: 3px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #E0D8FF;
+}
+
+

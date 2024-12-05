@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing Hub | Home</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>You've made it home!</h1>
+    <div class="main">
+        <header>
+            <h1>Home</h1>
+            <a href="/request">Make a Request</a>
+        </header>
+        <div class="section">
+            
+            <h2>Requests</h2>
+            <% for (let i = 0; i < 3; i++){ %>
+                <div class="request">
+                    <h3>Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod scelerisque enim, a malesuada nibh vehicula nec. Quisque ultricies nisi enim. Vestibulum a finibus erat. Etiam iaculis augue erat, nec luctus dui egestas quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent purus orci, rhoncus a enim id, porttitor iaculis lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <button interested-button>Interested 👀</button>
+                    <button class="uninterested-button">Uninterested</button>
+                    
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    
 </body>
 </html>
