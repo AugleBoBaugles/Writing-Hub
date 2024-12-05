@@ -10,7 +10,15 @@ const pool = mariadb.createPool({
 
 })
 
-
+async function connect(){
+    try{
+        let conn = await pool.getConnection();
+        console.log('Connected to the database');
+        return conn;
+    } catch (err){
+        console.log('Error connecting to the database: ' + err);
+    }
+}
 
 const app = express();
 const PORT = process.env.PORT_NUM;
@@ -23,19 +31,26 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     console.log("Hello, world - server!");
-
-    res.render('home');
+    const conn = await connect();
+    data = await conn.query(`SELECT * FROM requests`);
+    console.log(data)
+    res.render('home', {data: data});
 });
 
 app.get('/request', (req, res) => {
     res.render('request');
 });
 
-app.post('/submit', (req, res) => {
+app.post('/submit', async (req, res) => {
+    console.log(req.body);
     const data = req.body;
-    res.render('submitted');
+
+    const conn = await connect();
+    await conn.query(`INSERT INTO requests (title, content, author) VALUES ('${data.title}', '${data.content}', '${data.author}');`)
+
+    res.render('submitted', {data: data});
 });
 
 app.listen(PORT, () => {

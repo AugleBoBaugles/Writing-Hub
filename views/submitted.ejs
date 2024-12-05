@@ -14,7 +14,13 @@
             <a href="/request">Make Another Request</a>
         </header>
         <div class="section">
-            
+            <p>Title: <%= data.title %></p>
+            <p>Request: <%= data.content %> </p>
+            <% if (data.author.trim() == ''){ %>
+                <p>Author: Anonymous</p>
+            <% } else { %>
+                <p>Author: <%= data.author %> </p>
+            <% } %>
         </div>
     </div>
     
