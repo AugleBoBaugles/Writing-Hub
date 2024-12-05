@@ -9,6 +9,9 @@
     #0C0910 - Night
 
 */
+
+
+/* Global Styles */
 html {
     background-color: #0C0910;
     color: #E0D8FF;
@@ -32,14 +35,6 @@ h1 {
 .section {
     background-color: #73648A;
     padding: 10px;
-}
-
-.request {
-    background-color: #E0D8FF;
-    color: #0C0910;
-
-    padding: 10px;
-    margin: 10px;
 }
 
 input, textarea {
@@ -69,5 +64,57 @@ a {
 a:hover {
     background-color: #E0D8FF;
 }
+
+button {
+    background-color: #0C0910;
+    color:#E0D8FF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    height: 2rem;
+}
+
+button:hover {
+    background-color: #bc72f4;
+}
+
+.uninterested-button {
+    background-color: #9882AC;
+    display: none;
+}
+
+.claim-button {
+    background-color: #bc72f4;
+    color:#E0D8FF;
+}
+
+.claim-button:hover {
+    background-color:#453750;
+}
+
+.anon-author {
+    color: #73648A;
+}
+
+
+/* home.ejs */
+#page-summary {
+    text-align: center;
+}
+
+.request {
+    background-color: #E0D8FF;
+    color: #0C0910;
+
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
 
 

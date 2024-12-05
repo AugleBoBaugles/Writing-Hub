@@ -32,10 +32,9 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
-    console.log("Hello, world - server!");
+    
     const conn = await connect();
     data = await conn.query(`SELECT * FROM requests`);
-    console.log(data)
     res.render('home', {data: data});
 });
 
@@ -44,7 +43,7 @@ app.get('/request', (req, res) => {
 });
 
 app.post('/submit', async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const data = req.body;
 
     const conn = await connect();

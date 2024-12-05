@@ -9,7 +9,8 @@
 <body>
     <div class="main">
         <header>
-            <h1>Home</h1>
+            <h1>Writing Hub (Name Pending)</h1>
+            <p id="page-summary">Welcome to the [Writing Hub]! ** put a better summary here **</p>
             <a href="/request">Make a Request</a>
         </header>
         <div class="section">
@@ -21,13 +22,14 @@
                     <h3><%= data[i].title %></h3>
                     <p>Request: <%= data[i].content %> </p>
                     <% if (data[i].author.trim() == ''){ %>
-                        <p>Author: Anonymous</p>
+                        <p class="anon-author">Author: Anonymous</p>
                     <% } else { %>
                         <p>Author: <%= data[i].author %> </p>
                     <% } %>
     
-                    <button interested-button>Interested 👀</button>
-                    <button class="uninterested-button">Uninterested</button>
+                    <button class='interested-button'>Interested</button>
+                    <button class='uninterested-button'>Uninterested</button>
+                    <button class="claim-button">Claim</button>
 
                     <hr>
                     
