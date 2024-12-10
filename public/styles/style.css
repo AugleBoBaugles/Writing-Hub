@@ -78,6 +78,12 @@ button:hover {
     background-color: #bc72f4;
 }
 
+.interestd-button {
+    /* trying to put interested button next to title?
+    display: inline;
+    align-content: end; */
+}
+
 .uninterested-button {
     background-color: #9882AC;
     display: none;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing Hub | Home</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <div class="main">
@@ -20,6 +21,8 @@
             <% for (let i = 0; i < data.length; i++){ %>
                 <div class="request">
                     <h3><%= data[i].title %></h3>
+                    <button class='interested-button'>Interested</button>
+                    <button class='uninterested-button'>Uninterested</button>
                     <p>Request: <%= data[i].content %> </p>
                     <% if (data[i].author.trim() == ''){ %>
                         <p class="anon-author">Author: Anonymous</p>
@@ -27,8 +30,7 @@
                         <p>Author: <%= data[i].author %> </p>
                     <% } %>
     
-                    <button class='interested-button'>Interested</button>
-                    <button class='uninterested-button'>Uninterested</button>
+                    
                     <button class="claim-button">Claim</button>
 
                     <hr>
