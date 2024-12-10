@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Hub | Response Successful</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <h1>Submitted Resonse: Successful</h1>
+            <a href="/">Back to Home</a>
+        </header>
+        <div class="section">
+            <p class="note">Note: <%= data.message %></p>
+            <p>Your Response: <%= data.content %> </p>
+            <% if (data.author.trim() == ''){ %>
+                <p>Author: Anonymous</p>
+            <% } else { %>
+                <p>Author: <%= data.author %> </p>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+</html>

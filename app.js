@@ -70,6 +70,8 @@ app.post('/submit-response', async (req, res) => {
 
     const conn = await connect();
     await conn.query(`INSERT INTO responses(message, response, author, request_id) VALUES ('${data.message}', '${data.content}', '${data.author}', '${data.req_id}');`)
+
+    res.render('responded', {data: data});
 })
 
 
