@@ -7,6 +7,7 @@ for (let i = 0; i < interestedButtons.length; i++){
 
     button.addEventListener('click', () => {
         button.style.display = 'none';
+        
         for (let j = 0; j < uninterestedButtons.length; j++){
             let unintButton = uninterestedButtons[i];
             if(i == j){

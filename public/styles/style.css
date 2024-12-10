@@ -10,6 +10,7 @@
 
 */
 
+/* Already works well on mobile screens */
 /* @media screen and (max-width: 600px){
     .main{
         width: 100%;
@@ -24,7 +25,7 @@
 } */
 
 
-/* Global Styles */
+/* Global Styles --------------------------------*/
 * {
 	Box-sizing: border-box;
 }
@@ -98,32 +99,12 @@ button:hover {
     background-color: #bc72f4;
 }
 
-.interestd-button {
-    /* trying to put interested button next to title?
-    display: inline;
-    align-content: end; */
-}
-
-.uninterested-button {
-    background-color: #9882AC;
-    display: none;
-}
-
-/* .claim-button {
-    background-color: #bc72f4;
-    color:#E0D8FF;
-} */
-
-/* .claim-button:hover {
-    background-color:#453750;
-} */
-
 .anon-author {
     color:#453750;
 }
 
 
-/* home.ejs */
+/* home.ejs -----------------------------------*/
 #page-summary {
     text-align: center;
 }
@@ -149,6 +130,29 @@ button:hover {
 .note {
     color:#bc72f4;
 }
+
+
+
+/* Upcoming Features ---------------------------------*/
+.interestd-button {
+    /* trying to put interested button next to title?
+    display: inline;
+    align-content: end; */
+}
+
+.uninterested-button {
+    background-color: #9882AC;
+    display: none;
+}
+
+/* .claim-button {
+    background-color: #bc72f4;
+    color:#E0D8FF;
+} */
+
+/* .claim-button:hover {
+    background-color:#453750;
+} */
 
 
 
