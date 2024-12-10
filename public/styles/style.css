@@ -10,22 +10,42 @@
 
 */
 
+/* @media screen and (max-width: 600px){
+    .main{
+        width: 100%;
+    }
+    /* .section{
+        width: 100%;
+    }
+    header {
+        margin: 0;
+    }
+     */
+} */
+
 
 /* Global Styles */
+* {
+	Box-sizing: border-box;
+}
+
 html {
     background-color: #0C0910;
     color: #E0D8FF;
+    
 }
 
 header {
     background-color: #453750;
     padding: 20px;
     margin: 10px 0;
+    font-family:'Courier New', Courier, monospace;
 }
 
 .main {
     width: 80%;
     margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -89,17 +109,17 @@ button:hover {
     display: none;
 }
 
-.claim-button {
+/* .claim-button {
     background-color: #bc72f4;
     color:#E0D8FF;
-}
+} */
 
-.claim-button:hover {
+/* .claim-button:hover {
     background-color:#453750;
-}
+} */
 
 .anon-author {
-    color: #73648A;
+    color:#453750;
 }
 
 
@@ -114,6 +134,20 @@ button:hover {
 
     padding: 10px;
     margin: 10px;
+}
+
+.response {
+    padding: 5px;
+    margin: 5px;
+    background-color: #efebff;
+}
+
+.response-button{
+    width: 100%;
+}
+
+.note {
+    color:#bc72f4;
 }
 
 

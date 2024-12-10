@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Hub | Respond</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <h1>Respond</h1>
+            <a href="/">Back to Home</a>
+            
+        </header>
+        <div class="section">
+            <div id="request-blurb">
+                <p>Request: <%= data[0].content %> </p>
+                <% if (data[0].author.trim() == ''){ %>
+                    <p class="anon-author">Author: Anonymous</p>
+                <% } else { %>
+                    <p>Author: <%= data[0].author %> </p>
+                <% } %>
+                    
+            </div>
+            <div id="form-container">
+                <form id="response-form" method="POST" action="/submit-response">
+                    <!-- Note, Input (response), Optional Name-->
+                    <textarea name="message" placeholder="Enter a note (Optional)..."></textarea>
+                    <textarea name="content" placeholder="Enter your response..."></textarea>
+                    <input type="text" name="author" placeholder="Enter your name (Optional)...">
+                    <input type="hidden" name="req_id" value="<%= data[0].request_id %>">
+                    <button type="submit">Submit Response</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

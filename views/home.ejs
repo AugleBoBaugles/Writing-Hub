@@ -4,37 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing Hub | Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico?">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <div class="main">
         <header>
-            <h1>Writing Hub (Name Pending)</h1>
-            <p id="page-summary">Welcome to the [Writing Hub]! ** put a better summary here **</p>
+            <h1>Writing Hub</h1>
+            <p id="page-summary">Welcome to the Writing Hub!</p>
+            <p id="page-summary">A collective writing environment.</p>
             <a href="/request">Make a Request</a>
         </header>
         <div class="section">
             
             <h2>Requests</h2>
             
-            <% for (let i = 0; i < data.length; i++){ %>
+            <% for (let i = 0; i < requests.length; i++){ %>
                 <div class="request">
-                    <h3><%= data[i].title %></h3>
+                    
+                    <h3><%= requests[i].title %></h3>
                     <button class='interested-button'>Interested</button>
                     <button class='uninterested-button'>Uninterested</button>
-                    <p>Request: <%= data[i].content %> </p>
-                    <% if (data[i].author.trim() == ''){ %>
+                    <p>Request: <%= requests[i].content %> </p>
+                    <% if (requests[i].author.trim() == ''){ %>
                         <p class="anon-author">Author: Anonymous</p>
                     <% } else { %>
-                        <p>Author: <%= data[i].author %> </p>
+                        <p>Author: <%= requests[i].author %> </p>
                     <% } %>
-    
                     
-                    <button class="claim-button">Claim</button>
+                    <!-- <button class="claim-button">Claim</button> -->
+                    
 
                     <hr>
-                    
+
+                    <form action="/init-response" method="POST">
+                        <input name="request_id" type="hidden" value="<%= requests[i].request_id %>">
+                        <button type="submit" class="response-button">Respond</button>
+                    </form>
+                        <% let hasResponse = false; %>
+                        <% for (let j = 0; j < responses.length; j++){ %>
+                            
+    
+                            <% if (requests[i].request_id == responses[j].request_id) { 
+                                hasResponse = true; %>
+                                <div class="response">
+                                    <% if (!responses[j].message == ''){ %>
+                                        <p class="note">Note: <%= responses[j].message %></p>
+                                    <% } %>
+                                    
+                                    <p>Response: <%= responses[j].response %></p>
+                                    <% if(responses[j].author.trim() == ''){ %>
+                                        <p class="anon-auhor">Author: Anonymous</p>
+                                    <% } else { %>
+                                        <p>Author: <%= responses[j].author %></p>
+                                    <% } %>
+                                </div>
+                            <% } %>
+                            
+                        <% } %>
+                        <% if (!hasResponse) { %>
+                            <div class="response">
+                                <p>No Responses Yet...</p>
+                            </div>
+                        <% } %>
                 </div>
             <% } %>
         </div>
