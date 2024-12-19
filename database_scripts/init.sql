@@ -1,4 +1,4 @@
---CREATE DATABASE writing_hub;
+CREATE DATABASE writing_hub;
 USE writing_hub;
 
 CREATE TABLE requests (
@@ -37,6 +37,12 @@ CREATE TABLE comments (
     FOREIGN KEY(request_id) REFERENCES requests(request_id)
 );
 
+-- Testing
+/*
 INSERT INTO requests (title, content, author) VALUES ('This is my title', 'This is my content', 'Augy Markham');
 INSERT INTO responses (message, response, author, request_id) VALUES ('Here is my message', 'here is my response', 'author', 1);
 INSERT INTO comments (comment, author, request_id) VALUES ('This is a comment', 'me author', '1');
+SELECT * FROM requests;
+SELECT * FROM responses;
+SELECT * FROM comments;
+*/
